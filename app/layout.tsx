@@ -2,16 +2,18 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'PetSync - Smart Pet Health Monitoring',
+  description: 'AI-powered health monitoring for your beloved pets',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
       <body>{children}</body>
