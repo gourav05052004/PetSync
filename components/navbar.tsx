@@ -14,25 +14,25 @@ export default function Navbar() {
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-[#4A4A4A]">
-                Pet<span className="text-[#B8E7D4]">Sync</span>
+              <span className="text-4xl font-bold text-[#4A4A4A]">
+                Pet<span className="text-[#9990E1]">Sync</span>
               </span>
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#features" className="text-[#4A4A4A] hover:text-[#A7D8F1] transition-colors">
+            <Link href="#features" className="text-[#4A4A4A] hover:text-[#9990E1] transition-colors">
               Features
             </Link>
-            <Link href="#testimonials" className="text-[#4A4A4A] hover:text-[#A7D8F1] transition-colors">
+            <Link href="#testimonials" className="text-[#4A4A4A] hover:text-[#9990E1] transition-colors">
               Testimonials
             </Link>
-            <Link href="#pricing" className="text-[#4A4A4A] hover:text-[#A7D8F1] transition-colors">
+            <Link href="#pricing" className="text-[#4A4A4A] hover:text-[#9990E1] transition-colors">
               Pricing
             </Link>
-            <Link href="#faq" className="text-[#4A4A4A] hover:text-[#A7D8F1] transition-colors">
+            <Link href="#faq" className="text-[#4A4A4A] hover:text-[#9990E1] transition-colors">
               FAQ
             </Link>
-            <Button className="bg-[#B8E7D4] text-[#4A4A4A] hover:bg-[#A7D8F1] transition-colors">Get Started</Button>
+            <Button className="bg-[#9990E1] text-[#4A4A4A] hover:bg-[#c8c3f1] transition-colors">Get Started</Button>
           </div>
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-[#4A4A4A]">
@@ -48,33 +48,33 @@ export default function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               href="#features"
-              className="block px-3 py-2 text-[#4A4A4A] hover:bg-[#F9D5D3] hover:text-[#4A4A4A] rounded-md"
+              className="block px-3 py-2 text-[#4A4A4A] hover:text-[#9990E1] rounded-md transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Features
             </Link>
             <Link
               href="#testimonials"
-              className="block px-3 py-2 text-[#4A4A4A] hover:bg-[#F9D5D3] hover:text-[#4A4A4A] rounded-md"
+              className="block px-3 py-2 text-[#4A4A4A] hover:text-[#9990E1] rounded-md transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Testimonials
             </Link>
             <Link
               href="#pricing"
-              className="block px-3 py-2 text-[#4A4A4A] hover:bg-[#F9D5D3] hover:text-[#4A4A4A] rounded-md"
+              className="block px-3 py-2 text-[#4A4A4A] hover:text-[#9990E1] rounded-md transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Pricing
             </Link>
             <Link
               href="#faq"
-              className="block px-3 py-2 text-[#4A4A4A] hover:bg-[#F9D5D3] hover:text-[#4A4A4A] rounded-md"
+              className="block px-3 py-2 text-[#4A4A4A] hover:text-[#9990E1] rounded-md transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               FAQ
             </Link>
-            <Button className="w-full bg-[#B8E7D4] text-[#4A4A4A] hover:bg-[#A7D8F1] transition-colors">
+            <Button className="w-full bg-[#9990E1] text-[#4A4A4A] hover:bg-[#c8c3f1] transition-colors">
               Get Started
             </Button>
           </div>
