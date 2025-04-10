@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -64,18 +64,9 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % (testimonials.length - 2));
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-b from-[#FDFDFD] to-[#9990E1]/10 ">
+    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-b from-[#FDFDFD] to-[#9990E1]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#4A4A4A]">Trusted by Pet Parents Across India</h2>
@@ -84,47 +75,38 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="relative overflow-hidden">
-          <div 
-            ref={carouselRef}
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 33.33}%)` }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="w-full md:w-1/3 px-4 flex-shrink-0">
-                <Card className="bg-white border-none shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                  <CardContent className="p-6 h-full flex flex-col">
-                    <div className="flex items-center mb-6">
-                      <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-[#9990E1]/50">
-                        <Image
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          width={64}
-                          height={64}
-                          className="object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg text-[#4A4A4A]">{testimonial.name}</h3>
-                        <p className="text-[#4A4A4A]/70 text-sm">{testimonial.location}</p>
-                        <p className="text-[#9990E1] text-sm">
-                          Pet: {testimonial.petName} ({testimonial.petType})
-                        </p>
-                      </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, index) => (
+            <div key={index} className="w-full">
+              <Card className="bg-white border-none shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+                <CardContent className="p-6 h-full flex flex-col">
+                  <div className="flex items-center mb-6">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-[#9990E1]/50">
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        width={64}
+                        height={64}
+                        className="object-cover"
+                      />
                     </div>
-
-                    <div className="relative flex-grow">
-                      <p className="text-[#4A4A4A]/80 italic">{testimonial.quote}</p>
+                    <div>
+                      <h3 className="font-semibold text-lg text-[#4A4A4A]">{testimonial.name}</h3>
+                      <p className="text-[#4A4A4A]/70 text-sm">{testimonial.location}</p>
+                      <p className="text-[#9990E1] text-sm">
+                        Pet: {testimonial.petName} ({testimonial.petType})
+                      </p>
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
+                  </div>
+                  <p className="text-[#4A4A4A]/80 italic">{testimonial.quote}</p>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
         </div>
 
         <div className="flex justify-center mt-8 space-x-2">
-          {testimonials.slice(0, testimonials.length - 2).map((_, index) => (
+          {Array.from({ length: testimonials.length - 2 }).map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}

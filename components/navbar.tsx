@@ -32,7 +32,12 @@ export default function Navbar() {
             <Link href="#faq" className="text-[#4A4A4A] hover:text-[#9990E1] transition-colors">
               FAQ
             </Link>
-            <Button className="bg-[#9990E1] text-[#4A4A4A] hover:bg-[#c8c3f1] transition-colors">Get Started</Button>
+            <Button 
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-[#9990E1] text-[#4A4A4A] hover:bg-[#c8c3f1] transition-colors"
+            >
+              Get Started
+            </Button>
           </div>
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-[#4A4A4A]">
@@ -74,7 +79,13 @@ export default function Navbar() {
             >
               FAQ
             </Link>
-            <Button className="w-full bg-[#9990E1] text-[#4A4A4A] hover:bg-[#c8c3f1] transition-colors">
+            <Button 
+              onClick={() => {
+                document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                setIsMenuOpen(false); // Close mobile menu after clicking
+              }}
+              className="w-full bg-[#9990E1] text-[#4A4A4A] hover:bg-[#c8c3f1] transition-colors"
+            >
               Get Started
             </Button>
           </div>

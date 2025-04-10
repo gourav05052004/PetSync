@@ -14,7 +14,7 @@ export default function HeroSection() {
             <p className="text-xl md:text-2xl text-[#4A5568] max-w-lg mx-auto lg:mx-0">
               Never wonder if your pet is okay again. Our AI-powered monitor detects health issues before they become emergencies, giving you instant alerts and connecting you directly with vets when needed.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+            {/* <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
               <Button className="bg-[#9990E1] hover:bg-[#9990E1] text-white text-lg px-8 py-6 h-auto rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg">
                 Start Protecting Your Pet Today →
               </Button>
@@ -24,7 +24,7 @@ export default function HeroSection() {
               >
                 See How It Works
               </Button>
-            </div>
+            </div> */}
           </div>
           
           <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px]">
